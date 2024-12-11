@@ -1,6 +1,6 @@
 This repository contains the electronic resources for the paper `Improved bounds for Serre's open image theorem' by Imin Chen and Joshua Swidinsky.
 
-carayol mod 2.txt: for the proof of Theorem 1.3, we check that there is no homomorphism from a problematic group to a subgroup of order 24 or 48 in the codomain of \varphi
+**carayol mod 2.txt**: for the proof of Theorem 1.3, we check that there is no homomorphism from a problematic group to a subgroup of order 24 or 48 in the codomain of \varphi
 
 chebotarev bounds.txt: confirms Table 1, Proposition 5.1, and the constants in Theorem 1.3, 1.5, 1.7
 

@@ -53,6 +53,9 @@ for i in [1..#newsublist] do
 G2:=newsublist[i][3];
 N2:=Modulus(CoefficientRing(G2));
 
+// if the level is 1 or 2, increase to 4
+N2:=Minimum(4,N2);
+
 // double the level N2
 O2:=GL(2,Integers(N2*2));
 
@@ -95,6 +98,9 @@ for i in [1..#finesublist] do
 G2:=finesublist[i][4];
 N2:=Modulus(CoefficientRing(G2));
 
+// if the level is 1 or 2, increase to 4
+N2:=Minimum(4,N2);
+
 // double the level N2
 O2:=GL(2,Integers(N2*2));
 
@@ -130,7 +136,7 @@ assert flag;
 end for;
 
 
-// we conclude of the 1413 arithmetically maximal subgroups \rho_{E,2}(G) of GL_2(\Z_p), 
+// we conclude of the 1414 arithmetically maximal subgroups \rho_{E,2}(G) of GL_2(\Z_p), 
 // having genus <= 1 and \rhobar_{E,2} not absolutely irreducible,
 // none of these have a quotient isomorphic to one of the problematic groups of order 192, 128, 96, and factoring through \rho_{E,2}(G)/\Gamma
 

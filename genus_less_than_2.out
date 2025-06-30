@@ -1,0 +1,9 @@
+Magma V2.28-23    Mon Jun 30 2025 16:50:56 on cecm-gaby [Seed = 2813129746]
+Type ? for help.  Type <Ctrl>-D to quit.
+Loading "gl2data.txt"
+The number of genus le 1 groups: 408
+The number of modular curves with finitely many rational points 206
+The number of genus le 1 groups minus those with finitely many rational points: 
+202
+
+Total time: 1.169 seconds, Total memory usage: 64.12MB

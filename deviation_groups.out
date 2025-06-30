@@ -1,0 +1,15 @@
+Magma V2.28-23    Mon Jun 30 2025 16:50:18 on cecm-gaby [Seed = 2257442153]
+Type ? for help.  Type <Ctrl>-D to quit.
+Loading "gl2data.txt"
+Loading "curvelist1.txt"
+
+residual_group(
+    G: MatrixGroup(2, IntegerRing(2))
+)
+>>   assert IsDivisibleBy(Modulus(CoefficientRing(G2)),2);
+                                                 ^
+Runtime error in 'CoefficientRing': Bad argument types
+Argument types given: Intrinsic
+
+
+Total time: 1.209 seconds, Total memory usage: 64.12MB

@@ -3,7 +3,7 @@ This repository contains the electronic resources for the paper 'Improved bounds
 
 **carayol_mod_2.m**: for the proof of Theorem 1.3, we check that there is no homomorphism from a problematic group to a subgroup of order 24 or 48 in the codomain of \varphi
 
-**chebotarev_bounds.m**: confirms Table 1, Proposition 5.1, and the constants in Theorem 1.3, 1.5, 1.7
+**chebotarev_bounds.m**: confirms Table 1, Proposition 5.1, and the constants in Theorem 1.3, 1.5, 1.6
 
 **deviation_groups.m**: confirms that none of the 1208 possible 2-adic images for E/Q can have a quotient isomorphic to one of the problematic groups of order 192, 128, or 64
 

@@ -21,7 +21,7 @@ S:=MatrixAlgebra(Integers(),2);
 
 // residual group
 function residual_group(G);
-  assert IsDivisibleBy(Modulus(CoefficientRing(G2)),2);
+  assert IsDivisibleBy(Modulus(CoefficientRing(G)),2);
   G2:=GL(2,Integers(2));
   GG:=[G2!S!g : g in SetToSequence(Generators(G))];
   RG:=sub< G2 | GG >;

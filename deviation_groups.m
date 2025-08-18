@@ -14,7 +14,15 @@ G128a:=SmallGroup(DB,128,2326);
 G128b:=SmallGroup(DB,128,2327);
 G128c:=SmallGroup(DB,128,2328);
 G96a:=SmallGroup(DB,96,204);
-problematic_groups:=[G192a, G192b, G192c, G128a, G128b, G128c, G96a];
+G64a:=SmallGroup(DB,64,266);
+G64b:=SmallGroup(DB,64,267);
+G48a:=SmallGroup(DB,48,3);
+G48b:=SmallGroup(DB,48,50);
+G36a:=SmallGroup(DB,36,11);
+G32a:=SmallGroup(DB,32,49);
+G32b:=SmallGroup(DB,32,50);
+G32c:=SmallGroup(DB,32,51);
+problematic_groups:=[G192a, G192b, G192c, G128a, G128b, G128c, G96a, G64a, G64b, G48a, G48b, G36a, G32a, G32b, G32c];
 
 
 S:=MatrixAlgebra(Integers(),2);
@@ -47,7 +55,11 @@ end function;
 
 // curvelist1 has the labels of the 202 groups containing -I and having infinitely many Q-rational points
 // run through these and compute the deviation group of E and a twist E' of E which is inner
+
+tot_group:=0;
 for c in [1..#curvelist1] do
+
+tot_group:=tot_group+1;
 
 // get group label
 i:=curvelist1[c][1];
@@ -58,44 +70,46 @@ N2:=Modulus(CoefficientRing(G2));
 
 // no need to consider if the group has genus \ge 2
 if newsublist[i][5] notin [0,1] then
-  printf "Group # %o, Level %o (genus >= 2) \n", i, N2;
+  printf "Group # %o, Group Order %o, Level %o (genus >= 2) \n", i, #G2, N2;
   continue;
 end if;
 
 // no need to consider if the residual group is absolutely irreducible
 if #residual_group(G2) eq 6 then
-  printf "Group # %o, Level %o (absolutely irreducible) \n", i, N2;
+  printf "Group # %o, Group Order %o, Level %o (absolutely irreducible) \n", i, #G2, N2;
   continue;
 end if;
 
 // no need to consider if the residual group is reducible
 if #residual_group(G2) in [1,2] then
-  printf "Group # %o, Level %o (reducible) \n", i, N2;
+  printf "Group # %o, Group Order %o, Level %o (reducible) \n", i, #G2, N2;
   continue;
 end if;
 
 // if the level is 1 or 2, increase to 4
-N2:=Maximum(4,N2);
+N3:=Maximum(4,N2);
+D3:=Integers()!(2*N3/N2);
 
 // double the level N2
-O2:=GL(2,Integers(N2*2));
+O2:=GL(2,Integers(N3*2));
 
 // work in the group with level N2*2 by adding in lifts of generators at level N2 and generators for the elements congruent to I mod N2
 GG1:=[O2!S!g : g in SetToSequence(Generators(G2))];
 
-GG2:=[O2![1+a*N2,b*N2,c*N2,1+d*N2] : a,b,c,d in [0..1]];
+GG2:=[O2![1+a*N2,b*N2,c*N2,1+d*N2] : a,b,c,d in [0..D3-1]];
 H:=sub< O2 | GG2>;
-assert #H eq 16;
+assert #H eq D3^4;
 
 GG:=GG1 cat GG2;
 G:=sub< O2 | GG >;
 
-printf "Group # %o, Group Order %o, Lifted Level %o \n", i, #G, N2*2;
+printf "Group # %o, Group Order %o, Level %o, Lifted Group Order %o, Lifted Level %o \n", i, #G2, N2, #G, N3*2;
 flag:=not_quotient(G);
 assert flag;
 
 end for;
 
+print "Total number of groups checked:", tot_group;
 
 // this implies of the 202 possibilities for \rhobar_{E,2}(G) containing -I and having infinitely many Q-rational points,
 // none of these have a quotient isomorphic to one of the problematic groups of order 192, 128, 96, and factoring through \rho_{E,2}(G)/\Gamma

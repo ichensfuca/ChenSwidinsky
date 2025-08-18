@@ -79,7 +79,7 @@ assert confirm(48,[3,50]) eq 24;
 assert confirm(36,[11]) eq 12;
 assert confirm(32,[49,50,51]) eq 16;
 
-
+// groups of order 24, 16, 12 are terminal, i.e. these do not have smaller quotients with an element of order > 3
 
 
 

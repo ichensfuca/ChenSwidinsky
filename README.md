@@ -8,7 +8,7 @@ This repository contains the electronic resources for the paper `Improved bounds
 
 **curvelist1.txt**: this file contains the labels of the 202 groups containing -I and having infinitely many Q-rational points
 
-**deviation_groups.m**: confirms that none of the 202 possible 2-adic images that occur for infinitely many E/Q can have a quotient isomorphic to one of the problematic groups of order 192, 128, or 64
+**deviation_groups.m**: confirms that none of the 202 possible 2-adic images that occur for infinitely many E/Q can have a quotient isomorphic to one of the problematic groups
 
 **genus_less_than_2.m**: confirms the count of 202 possible 2-adic images that occur for infinitely many elliptic curves E/Q
 

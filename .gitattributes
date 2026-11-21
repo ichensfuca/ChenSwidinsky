@@ -1,1 +1,3 @@
 *.m linguist-language=Magma
+*.mag linguist-language=Magma
+*.magma linguist-language=Magma

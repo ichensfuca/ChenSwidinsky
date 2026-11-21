@@ -1,4 +1,5 @@
 
+
 // this program verifies the assertion after (5.14)
 
 // initialize small group database
